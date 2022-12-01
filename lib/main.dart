@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wouflove/src/models/animal.dart';
 import 'package:wouflove/src/constants.dart';
 import 'package:wouflove/src/theme.dart';
+import 'package:wouflove/src/ui/widgets/post_widget.dart';
 import 'package:wouflove/src/ui/widgets/stories.dart';
 
 void main() {
@@ -51,8 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const <Widget>[
-            Stories()
+          children: <Widget>[
+            Stories(),
+            PostWidget()
           ],
         ),
       ),

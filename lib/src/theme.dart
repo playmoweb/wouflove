@@ -7,6 +7,7 @@ abstract class WoufTheme {
   static Color black = Color(0xFF080A0F);
   static Color white = Color(0xFFFFFFFF);
   static Color primary = Color(0xFF0017E5);
+  static Color darkGray = Color(0xFF1F2638);
 
   static ThemeData theme = ThemeData(
     primaryColor: primary,
@@ -22,6 +23,11 @@ abstract class WoufTheme {
         fontSize: SMALL_TITLE_SIZE,
         color: white,
         fontWeight: FontWeight.w700,
+      ),
+      bodyLarge: GoogleFonts.raleway(
+        fontSize: LARGE_BODY_SIZE,
+        color: white,
+        fontWeight: FontWeight.w600
       ),
       bodyMedium: GoogleFonts.raleway(
         fontSize: MEDIUM_BODY_SIZE,
