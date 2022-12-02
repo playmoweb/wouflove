@@ -11,6 +11,7 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
+  //Used to define the selected item in the bottombar
   int currentIndex = 0;
 
   @override
