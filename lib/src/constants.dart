@@ -22,5 +22,6 @@ double ITEM_RADIUS = 10;
  * WIDGET SIZES
  **************************/
 double IMAGE_SIZE = 70;
+double LARGE_CONTAINER_SIZE = 60;
 double SMALL_CONTAINER_SIZE = 30;
 double XSMALL_CONTAINER_SIZE = 20;
