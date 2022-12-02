@@ -18,7 +18,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Post> posts = [tuxonPost, tuxonPost];
+  List<Post> posts = [toxonPost, toxonPost];
 
   @override
   Widget build(BuildContext context) {

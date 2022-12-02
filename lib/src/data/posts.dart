@@ -1,7 +1,7 @@
 import 'package:wouflove/src/models/post.dart';
 
-Post tuxonPost = Post(
-  profileName: "Tuxon",
+Post toxonPost = Post(
+  profileName: "Toxon",
   profilePicture: "assets/dog_1.png",
   images: [
     "assets/dog_picture_1.png",

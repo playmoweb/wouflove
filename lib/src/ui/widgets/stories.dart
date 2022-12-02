@@ -23,8 +23,8 @@ class Stories extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        width: IMAGE_SIZE,
-                        height: IMAGE_SIZE,
+                        width: XLARGE_CONTAINER_SIZE,
+                        height: XLARGE_CONTAINER_SIZE,
                         padding: const EdgeInsets.all(2.0),
                         decoration: BoxDecoration(
                           border: Border.all(

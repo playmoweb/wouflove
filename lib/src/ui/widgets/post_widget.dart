@@ -27,7 +27,8 @@ class _PostWidgetState extends State<PostWidget> {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: SMALL_PADDING),
       child: Container(
-        height: screenHeight - APPBAR_HEIGHT - STORIES_HEIGHT - BOTTOMBAR_HEIGHT,
+        height:
+            screenHeight - APPBAR_HEIGHT - STORIES_HEIGHT - BOTTOMBAR_HEIGHT,
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -58,15 +59,22 @@ class _PostWidgetState extends State<PostWidget> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: SMALL_PADDING, top: SMALL_PADDING),
+                      left: SMALL_PADDING,
+                      top: SMALL_PADDING,
+                    ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
                           padding: EdgeInsets.only(right: XSMALL_PADDING),
-                          child: Image.asset(
-                            widget.post.profilePicture,
-                            fit: BoxFit.fill,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(100),
+                            child: Image.asset(
+                              widget.post.profilePicture,
+                              fit: BoxFit.cover,
+                              height: MEDIUM_CONTAINER_SIZE,
+                              width: MEDIUM_CONTAINER_SIZE,
+                            ),
                           ),
                         ),
                         Text(
