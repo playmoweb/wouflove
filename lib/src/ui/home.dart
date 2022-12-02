@@ -9,16 +9,14 @@ import '../constants.dart';
 import '../theme.dart';
 
 class Home extends StatefulWidget {
-  final String title;
-
-  const Home({super.key, required this.title});
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  List<Post> posts = [toxonPost, toxonPost];
+  List<Post> posts = [toxonPost];
 
   @override
   Widget build(BuildContext context) {
