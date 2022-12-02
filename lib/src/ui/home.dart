@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:wouflove/src/data/posts.dart';
+import 'package:wouflove/src/models/post.dart';
 import 'package:wouflove/src/ui/widgets/bottombar.dart';
 import 'package:wouflove/src/ui/widgets/post_widget.dart';
 import 'package:wouflove/src/ui/widgets/stories.dart';
 import '../constants.dart';
 import '../theme.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
+class Home extends StatefulWidget {
   final String title;
 
+  const Home({super.key, required this.title});
+
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Home> createState() => _HomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeState extends State<Home> {
+  List<Post> posts = [tuxonPost, tuxonPost];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +56,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Stories(),
-            PostWidget(),
+            const Stories(),
+            Expanded(
+              child: ListView(
+                children: posts.map((post) => PostWidget(post)).toList(),
+              ),
+            ),
           ],
         ),
       ),

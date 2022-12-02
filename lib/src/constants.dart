@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 /**************************
  * TEXT SIZES
  **************************/
@@ -25,3 +27,6 @@ double IMAGE_SIZE = 70;
 double LARGE_CONTAINER_SIZE = 60;
 double SMALL_CONTAINER_SIZE = 30;
 double XSMALL_CONTAINER_SIZE = 20;
+double STORIES_HEIGHT = IMAGE_SIZE + MEDIUM_BODY_SIZE + SMALL_PADDING;
+double APPBAR_HEIGHT = kToolbarHeight;
+double BOTTOMBAR_HEIGHT = XSMALL_CONTAINER_SIZE;

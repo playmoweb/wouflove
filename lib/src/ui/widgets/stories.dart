@@ -9,8 +9,8 @@ class Stories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: IMAGE_SIZE + MEDIUM_BODY_SIZE + SMALL_PADDING,
+    return SizedBox(
+      height: STORIES_HEIGHT,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: Animal.values.map((animal) {
@@ -27,11 +27,12 @@ class Stories extends StatelessWidget {
                         height: IMAGE_SIZE,
                         padding: const EdgeInsets.all(2.0),
                         decoration: BoxDecoration(
-                            border: Border.all(
-                                color: Theme.of(context).primaryColor,
-                                width: 2),
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(100))),
+                          border: Border.all(
+                            color: Theme.of(context).primaryColor,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(100)),
+                        ),
                         child: Image.asset(
                           animal.image,
                           fit: BoxFit.fill,
@@ -39,23 +40,24 @@ class Stories extends StatelessWidget {
                       ),
                       isFirst
                           ? Positioned.fill(
-                            child: Align(
-                              alignment: Alignment.bottomRight,
-                              child: Container(
+                              child: Align(
+                                alignment: Alignment.bottomRight,
+                                child: Container(
                                   height: XSMALL_CONTAINER_SIZE,
                                   width: XSMALL_CONTAINER_SIZE,
                                   decoration: BoxDecoration(
                                     color: WoufTheme.white,
-                                    borderRadius: const BorderRadius.all(Radius.circular(100)),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(100)),
                                   ),
                                   child: Icon(
-                                      Icons.add,
-                                      color: WoufTheme.black,
-                                      size: XSMALL_CONTAINER_SIZE,
+                                    Icons.add,
+                                    color: WoufTheme.black,
+                                    size: XSMALL_CONTAINER_SIZE,
                                   ),
                                 ),
-                            ),
-                          )
+                              ),
+                            )
                           : Container()
                     ],
                   ),

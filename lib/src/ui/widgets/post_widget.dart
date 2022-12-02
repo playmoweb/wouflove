@@ -8,22 +8,27 @@ import 'package:wouflove/src/theme.dart';
 import '../../constants.dart';
 
 class PostWidget extends StatefulWidget {
-  PostWidget({Key? key}) : super(key: key);
+  final Post post;
+
+  PostWidget(this.post, {Key? key}) : super(key: key);
 
   @override
   State<PostWidget> createState() => _PostWidgetState();
 }
 
 class _PostWidgetState extends State<PostWidget> {
-  Post post = Post();
   PageController controller = PageController();
   ValueNotifier<int> currentPageNotifier = ValueNotifier<int>(0);
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: SMALL_PADDING),
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: SMALL_PADDING),
+      child: Container(
+        height: screenHeight - APPBAR_HEIGHT - STORIES_HEIGHT - BOTTOMBAR_HEIGHT,
+        width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -39,7 +44,7 @@ class _PostWidgetState extends State<PostWidget> {
                     onPageChanged: (int index) {
                       currentPageNotifier.value = index;
                     },
-                    children: post.images
+                    children: widget.post.images
                         .map(
                           (image) => ClipRRect(
                             borderRadius: BorderRadius.circular(ITEM_RADIUS),
@@ -60,12 +65,12 @@ class _PostWidgetState extends State<PostWidget> {
                         Padding(
                           padding: EdgeInsets.only(right: XSMALL_PADDING),
                           child: Image.asset(
-                            post.profilePicture,
+                            widget.post.profilePicture,
                             fit: BoxFit.fill,
                           ),
                         ),
                         Text(
-                          post.profileName,
+                          widget.post.profileName,
                           style: Theme.of(context).textTheme.bodyLarge,
                         )
                       ],
@@ -83,7 +88,6 @@ class _PostWidgetState extends State<PostWidget> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-
                   /**************************
                    * BUTTONS
                    **************************/
@@ -114,7 +118,7 @@ class _PostWidgetState extends State<PostWidget> {
                    * INDICATOR
                    **************************/
                   CirclePageIndicator(
-                    itemCount: post.images.length,
+                    itemCount: widget.post.images.length,
                     currentPageNotifier: currentPageNotifier,
                     dotColor: WoufTheme.darkGray,
                     selectedDotColor: WoufTheme.primary,
@@ -124,8 +128,11 @@ class _PostWidgetState extends State<PostWidget> {
                    * POST DATE
                    **************************/
                   Text(
-                    FormatDate.toRelative(post.postedAt),
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: WoufTheme.white.withOpacity(0.5)),
+                    FormatDate.toRelative(widget.post.postedAt),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(color: WoufTheme.white.withOpacity(0.5)),
                   )
                 ],
               ),
@@ -135,13 +142,13 @@ class _PostWidgetState extends State<PostWidget> {
              * LIKES
              **************************/
             SizedBox(height: XSMALL_PADDING),
-            Text("${post.numberLikes} J'aimes"),
+            Text("${widget.post.numberLikes} J'aimes"),
 
             /**************************
              * DESCRIPTION
              **************************/
             SizedBox(height: XSMALL_PADDING),
-            Text(post.description)
+            Text(widget.post.description)
           ],
         ),
       ),
