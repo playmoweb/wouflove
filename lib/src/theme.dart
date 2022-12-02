@@ -6,7 +6,7 @@ import 'constants.dart';
 abstract class WoufTheme {
   static Color black = Color(0xFF080A0F);
   static Color white = Color(0xFFFFFFFF);
-  static Color primary = Color(0xFF0017E5);
+  static Color primary = Color(0xFFDA0108);
   static Color darkGray = Color(0xFF1F2638);
 
   static ThemeData theme = ThemeData(
