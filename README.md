@@ -1,6 +1,6 @@
 # Wouflove
 
-L'application Wouflove est un exercice Flutter déstinée aux débutants.
+L'application Wouflove est un exercice Flutter déstiné aux débutants.
 
 L’objectif est de permettre à des débutants de manier des outils utilisés dans le quotidien d’un développeur (en passant par exemple par un vrai IDE).
 
